@@ -5,17 +5,40 @@
         <link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
         <link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
         <style>
+            h2 {
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 100%;
+            }
             fieldset {
                 border: none;
                 text-align: center;
             }
+            #player-input {
+                border: 2px solid #000;
+                width: 70%;
+                height: 10%;
+                margin: 3% auto;
+                display: block;
+                font-size: 2em;
+            }
+            #player-submit {
+                height: 100px;
+                width: 100px;
+                border: 2px solid #000;
+                background: #25b115;
+                border-radius: 50%;
+                font-size: 1.5em;
+                color: #fff;
+            }
+
         </style>
     </head>
     <body>
-        <voice-player autoplay accent="pt-BR" text="Bem-vindo, comece a digitar!"></voice-player>
+        <h2>Comece a digitar e depois clique no botão VERDE para ouvir</h2>
         <form id="player-form" class="pure-form">
             <fieldset>
-                <input id="player-input" type="text" placeholder="Digite e ouça">
+                <input id="player-input" type="text">
                 <button id="player-submit" class="pure-button pure-button-primary">Ouvir</button>
             </fieldset>
         </form>
