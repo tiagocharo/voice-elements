@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
+        <link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
+        <style>
+            fieldset {
+                border: none;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <voice-player autoplay accent="pt-BR" text="Bem-vindo, comece a digitar!"></voice-player>
+        <form id="player-form" class="pure-form">
+            <fieldset>
+                <input id="player-input" type="text" placeholder="Digite e ouça">
+                <button id="player-submit" class="pure-button pure-button-primary">Ouvir</button>
+            </fieldset>
+        </form>
+        <voice-player id="player-element" accent="pt-BR" text=""></voice-player>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+        <script>
+                var form = document.querySelector('#player-form'),
+                    input = document.querySelector('#player-input'),
+                    element = document.querySelector('#player-element');
+                
+                input.addEventListener('input', function(e) {
+                    element.setAttribute('text', input.value);
+                });
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    element.speak();
+                });
+                </script>
+    </body>
+</html>
